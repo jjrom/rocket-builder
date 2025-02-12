@@ -5,3 +5,6 @@ WORKDIR "/"
 COPY package.json /package.json
 RUN npm install --verbose
 
+COPY GruntFile.js /GruntFile.js
+ENTRYPOINT ["node_modules/grunt/bin/grunt", "--gruntfile", "GruntFile.js"]
+
